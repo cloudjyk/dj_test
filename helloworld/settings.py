@@ -121,6 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
+STATICFILES_DIRS = [
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    ("images", os.path.join(STATIC_ROOT, 'images').replace('\\', '/')),
+    ("css", os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
+    ("js", os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
+]
