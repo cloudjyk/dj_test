@@ -22,9 +22,11 @@ Including another URLconf
 
 
 from django.urls import path, re_path
-from . import views
+from . import views, testdb
 
 urlpatterns = [
     path('<int:name>', views.hello),
-    re_path('(?P<name>^[a-zA-Z]*$)', views.hello2)
+    # re_path('(?P<name>^[a-zA-Z]*$)', views.hello2),
+    # path('<str:name>', testdb.testdb)
+    re_path('(?P<name>^[a-zA-Z]*$)', testdb.testdb)
 ]
